@@ -7,8 +7,10 @@ console.log("hola hola");
 
 
 //#region ===TECLADO/BOTONES===
-var tecla, signo;
-var num1, num2;
+var tecla = "";
+var signo = "";
+var num1 = 0;
+var num2 = 0;
 var iteracion = 1;
 
 PressBotones();
@@ -22,12 +24,16 @@ document.onkeyup=soltarTecla
 function pressTecla(event){
     var teclado = event.which || event.keyCode;
 
+    console.log(num1 + signo +  num2)
+
     if(teclado==13){
         //alert("es ENTER")
 
         //console.log("n1: ", num1, " signo: ", signo, " n2: ", num2)
         //console.log(num1 + signo +  num2)
         calcular(num1, num2, signo)
+
+        //num1 = 0;
     }
     else{
         tecla = String.fromCharCode(teclado)
@@ -49,6 +55,7 @@ function pressTecla(event){
                     num2 = tecla;
     
                     //console.log("n1: ", num1, " signo: ", signo, " n2: ", num2)
+                    iteracion = 1;
                 }
             }
             else{
@@ -97,6 +104,8 @@ function pressTecla(event){
         else{
             alert("ya no es posible más");
         }
+
+        
     }
    
 
